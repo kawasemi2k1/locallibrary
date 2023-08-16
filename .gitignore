@@ -1,0 +1,6 @@
+.idea
+# all pycache
+locallibrary/__pycache__
+catalog/__pycache__
+db.sqlite3
+.env
