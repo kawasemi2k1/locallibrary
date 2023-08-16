@@ -2,5 +2,6 @@
 # all pycache
 locallibrary/__pycache__
 catalog/__pycache__
+catalog/migrations/__pycache__
 db.sqlite3
 .env
