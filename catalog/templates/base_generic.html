@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load i18n %}
+<head>{% block title %}<title>Local Library</title>{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <!-- Add additional CSS in static file -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<div class="container-fluid">
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_available_languages as LANGUAGES %}
+    {% get_language_info_list for LANGUAGES as languages %}
+    <div class="row">
+        <div class="col-sm-2">{% block sidebar %}
+            <ul class="sidebar-nav">
+                <li>
+                    {% for language in languages %}
+                        <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ redirect_to }}"/>
+                            <input type="hidden" name="language" value="{{ language.code }}"/>
+                            <input type="image" src="{{ '/static/images/flags/'|add:language.code|add:'.png' }}"
+                                   style="width: 35px; height: 25px; margin-bottom: 3px; margin-left: 3px; margin-right: 3px;"
+                                   alt="{{ language.name_local }}"/>
+                        </form>
+                    {% endfor %}
+                </li>
+                <li><a href="{% url 'index' %}">{% trans "Home" %}</a></li>
+                <li><a href="">{% trans "All books" %}</a></li>
+                <li><a href="">{% trans "All authors" %}</a></li>
+            </ul>{% endblock %}</div>
+        <div class="col-sm-10 ">{% block content %}{% endblock %}</div>
+    </div>
+</div>
+</body>
+</html>
