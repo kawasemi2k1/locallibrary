@@ -6,7 +6,9 @@
     <p>{% trans "Welcome to LocalLibrary, a website developed by " %}<em>Mozilla Developer Network</em>!</p>
     {% load static %}
     <img src="{% static 'images/homepage.jpg' %}" alt="homepage">
+
     <h2>{% trans "Statistic" %}</h2>
+
     <p>{% trans "The library has the following record counts:" %}</p>
     <ul>
         <li><strong>{% trans "Books:" %}</strong> {{ num_books }}</li>
@@ -14,4 +16,5 @@
         <li><strong>{% trans "Number of books available:" %}</strong> {{ num_instances_available }}</li>
         <li><strong>{% trans "Authors:" %}</strong> {{ num_authors }}</li>
     </ul>
+    <p>{% trans "You have visited this page " %}{{ num_visits }} {% trans "time" %}{% if num_visits > 1 %}{% trans "stt" %}{% endif %}</p>
 {% endblock %}
