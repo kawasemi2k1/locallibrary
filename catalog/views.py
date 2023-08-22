@@ -2,7 +2,9 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from catalog.models import Book, Author, BookInstance
+from catalog.models import Book, Author, BookInstance, Genre
+from django.views import generic
+from django.shortcuts import get_object_or_404
 
 
 def index(request):
@@ -24,3 +26,23 @@ def index(request):
     }
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
+
+
+class BookListView(generic.ListView):
+    model = Book
+    paginate_by = 10
+
+
+def book_detail_view(request, primary_key):
+    book = get_object_or_404(Book, pk=primary_key)
+    return render(request, 'catalog/book_detail.html', context={'book': book})
+
+
+class AuthorListView(generic.ListView):
+    model = Author
+    paginate_by = 10
+
+
+def author_detail_view(request, primary_key):
+    author = get_object_or_404(Author, pk=primary_key)
+    return render(request, 'catalog/author_detail.html', context={'author': author})
