@@ -59,7 +59,7 @@ class BookInstance(models.Model):
     book = models.ForeignKey('Book', on_delete=models.RESTRICT)
     imprint = models.CharField(max_length=200)
     due_back = models.DateField(null=True, blank=True)
-    borrower = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    borrower = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True, blank=True)
     LOAN_STATUS = (
         ('m', 'Maintenance'),
         ('o', 'On loan'),
@@ -89,10 +89,10 @@ class BookInstance(models.Model):
 
 class Author(models.Model):
     """Model representing an author."""
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    date_of_birth = models.DateField(null=True, blank=True)
-    date_of_death = models.DateField('Died', null=True, blank=True)
+    first_name = models.CharField(_('first name'), max_length=100)
+    last_name = models.CharField(_('last name'), max_length=100)
+    date_of_birth = models.DateField(_('birth date'), null=True, blank=True)
+    date_of_death = models.DateField(_('death date'), null=True, blank=True)
 
     class Meta:
         ordering = ['last_name', 'first_name']
