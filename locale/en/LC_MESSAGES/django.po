@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-21 17:22+0700\n"
+"POT-Creation-Date: 2023-08-21 14:27+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -150,29 +150,41 @@ msgstr "Local Library Home"
 msgid "Welcome to LocalLibrary, a website developed by "
 msgstr "Welcome to LocalLibrary, a website developed by "
 
-#: .\catalog\templates\index.html:9
+#: .\catalog\templates\index.html:10
 msgid "Statistic"
 msgstr "Statistic"
 
-#: .\catalog\templates\index.html:10
+#: .\catalog\templates\index.html:12
 msgid "The library has the following record counts:"
 msgstr "The library has the following record counts:"
 
-#: .\catalog\templates\index.html:12
+#: .\catalog\templates\index.html:14
 msgid "Books:"
 msgstr "Books:"
 
-#: .\catalog\templates\index.html:13
+#: .\catalog\templates\index.html:15
 msgid "Book instances:"
 msgstr "Book instances:"
 
-#: .\catalog\templates\index.html:14
+#: .\catalog\templates\index.html:16
 msgid "Number of books available:"
 msgstr "Number of books available:"
 
-#: .\catalog\templates\index.html:15
+#: .\catalog\templates\index.html:17
 msgid "Authors:"
 msgstr "Authors:"
+
+#: .\catalog\templates\index.html:19
+msgid "You have visited this page "
+msgstr "You have visited this page "
+
+#: .\catalog\templates\index.html:19
+msgid "time"
+msgstr "time"
+
+#: .\catalog\templates\index.html:19
+msgid "stt"
+msgstr "s"
 
 #: .\locallibrary\settings.py:119
 msgid "English"
