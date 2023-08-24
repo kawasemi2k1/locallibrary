@@ -3,10 +3,15 @@
 
 {% block content %}
     <br>
-    <p><strong>{% trans "Name:" %}</strong> <a href="">{{ author.first_name }} {{ author.last_name }}</a></p> <!-- author detail linknot yet defined -->
+    <p><strong>{% trans "Name:" %}</strong> <a href="">{{ author.first_name }} {{ author.last_name }}</a></p>
+    <!-- author detail linknot yet defined -->
     <p><strong>{% trans "Birth:" %}</strong> {{ author.date_of_birth }}</p>
     {% if author.date_of_death %}
         <p><strong>{% trans "Death:" %}</strong> {{ author.date_of_death }}</p>
+    {% endif %}
+    {% if user.is_staff %}
+        <a href="{% url 'author-update' author.pk %}" class="btn btn-primary">update</a>
+        <a href="{% url 'author-delete' author.pk %}" class="btn btn-danger">delete</a>
     {% endif %}
     <div style="margin-left:20px;margin-top:20px">
         <h4>{% trans "List Books" %}</h4>

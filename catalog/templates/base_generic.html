@@ -42,6 +42,14 @@
                 {% else %}
                     <li><a href="{% url 'login' %}?next={{ request.path }}">{% trans "Login" %}</a></li>
                 {% endif %}
+                {% if user.is_staff %}
+                    <br/>
+                    <hr>
+                    <br/>
+                    <li>Staff</li>
+                    <li><a href="{% url 'all-borrowed' %}">{% trans "All borrowed" %}</a></li>
+                    <li><a href="{% url 'author-create' %}">{% trans "Create Author" %}</a></li>
+                {% endif %}
             </ul>
         {% endblock %}
         </div>

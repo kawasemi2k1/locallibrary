@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-23 15:40+0700\n"
+"POT-Creation-Date: 2023-08-24 14:03+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\catalog\forms.py:9
+msgid "Enter a date between now and 4 weeks (default 3)."
+msgstr "Enter a date between now and 4 weeks (default 3)."
+
+#: .\catalog\forms.py:16
+msgid "Invalid date - renewal in past"
+msgstr "Invalid date - renewal in past"
+
+#: .\catalog\forms.py:20
+msgid "Invalid date - renewal more than 4 weeks ahead"
+msgstr "Invalid date - renewal more than 4 weeks ahead"
 
 #: .\catalog\models.py:11
 msgid "Enter a book genre (e.g. Science Fiction)"
@@ -51,6 +63,22 @@ msgstr "Unique ID for this particular book across whole library"
 msgid "Book availability"
 msgstr "Book availability"
 
+#: .\catalog\models.py:92
+msgid "first name"
+msgstr "First name"
+
+#: .\catalog\models.py:93
+msgid "last name"
+msgstr "Last name"
+
+#: .\catalog\models.py:94
+msgid "birth date"
+msgstr "Birth date"
+
+#: .\catalog\models.py:95
+msgid "death date"
+msgstr "Death date"
+
 #: .\catalog\templates\base_generic.html:34
 msgid "Home"
 msgstr "Home"
@@ -79,37 +107,62 @@ msgstr "Logout"
 msgid "Login"
 msgstr "Login"
 
-#: .\catalog\templates\base_generic.html:54
+#: .\catalog\templates\base_generic.html:50
+msgid "All borrowed"
+msgstr "All borrowed"
+
+#: .\catalog\templates\base_generic.html:51
+msgid "Create Author"
+msgstr "Create Author"
+
+#: .\catalog\templates\base_generic.html:62
 msgid "previous"
 msgstr "previous"
 
-#: .\catalog\templates\base_generic.html:57
+#: .\catalog\templates\base_generic.html:65
 msgid "Page"
 msgstr "Page"
 
-#: .\catalog\templates\base_generic.html:57
+#: .\catalog\templates\base_generic.html:65
 msgid " of "
 msgstr " of "
 
-#: .\catalog\templates\base_generic.html:60
+#: .\catalog\templates\base_generic.html:68
 msgid "next"
 msgstr "next"
+
+#: .\catalog\templates\catalog\author_confirm_delete.html:4
+msgid "Delete Author"
+msgstr "Delete Author"
+
+#: .\catalog\templates\catalog\author_confirm_delete.html:5
+msgid "Are you sure you want to delete the author?"
+msgstr "Are you sure you want to delete the author?"
+
+#: .\catalog\templates\catalog\author_confirm_delete.html:8
+msgid "Yes, delete."
+msgstr "Yes, delete."
 
 #: .\catalog\templates\catalog\author_detail.html:6
 msgid "Name:"
 msgstr "Name:"
 
-#: .\catalog\templates\catalog\author_detail.html:7
+#: .\catalog\templates\catalog\author_detail.html:8
 msgid "Birth:"
 msgstr "Birth:"
 
-#: .\catalog\templates\catalog\author_detail.html:9
+#: .\catalog\templates\catalog\author_detail.html:10
 msgid "Death:"
 msgstr "Death:"
 
-#: .\catalog\templates\catalog\author_detail.html:12
+#: .\catalog\templates\catalog\author_detail.html:17
 msgid "List Books"
 msgstr "List Books"
+
+#: .\catalog\templates\catalog\author_form.html:7
+#: .\catalog\templates\catalog\book_renew_librarian.html:14
+msgid "Submit"
+msgstr "Submit"
 
 #: .\catalog\templates\catalog\author_list.html:5
 msgid "Author List"
@@ -159,13 +212,34 @@ msgstr "Book instances:"
 msgid "There are no books in the library."
 msgstr "There are no books in the library."
 
-#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:5
-msgid "Borrowed books"
-msgstr "Borrowed books"
+#: .\catalog\templates\catalog\book_renew_librarian.html:5
+msgid "Renew:"
+msgstr "Renew:"
 
+#: .\catalog\templates\catalog\book_renew_librarian.html:6
+msgid "Borrower:"
+msgstr "Borrower:"
+
+#: .\catalog\templates\catalog\book_renew_librarian.html:7
+msgid "Due date:"
+msgstr "Due date:"
+
+#: .\catalog\templates\catalog\bookinstance_list_all_borrowed.html:5
+msgid "All Borrowed Books"
+msgstr "All Borrowed Books"
+
+#: .\catalog\templates\catalog\bookinstance_list_all_borrowed.html:13
+msgid "Renew1"
+msgstr "Renew"
+
+#: .\catalog\templates\catalog\bookinstance_list_all_borrowed.html:19
 #: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:17
 msgid "There are no books borrowed."
 msgstr "There are no books in the library."
+
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:5
+msgid "Borrowed books"
+msgstr "Borrowed books"
 
 #: .\catalog\templates\index.html:5
 msgid "Local Library Home"
