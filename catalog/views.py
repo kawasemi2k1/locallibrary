@@ -51,3 +51,16 @@ class AuthorListView(generic.ListView):
 def author_detail_view(request, primary_key):
     author = get_object_or_404(Author, pk=primary_key)
     return render(request, 'catalog/author_detail.html', context={'author': author})
+
+
+class LoanedBooksByUserListView(generic.ListView):
+    model = BookInstance
+    template_name = 'catalog/bookinstance_list_borrowed_user.html'
+    paginate_by = 10
+
+    def get_queryset(self):
+        if self.request.user.is_authenticated:
+            return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o').order_by(
+                'due_back')
+        else:
+            return BookInstance.objects.none()
