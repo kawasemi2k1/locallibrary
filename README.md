@@ -2,6 +2,18 @@
 
 Welcome to the Local Library! This project was created by following the Sun* Training for the purpose of learning Django.
 > Link deploy: http://tungsnk.tech:8000
+
+> Normal user:
+
+username: `hantn`
+
+password: `thuyhana2001`
+> Staff:
+
+username: `thuynt`
+
+password: `thuyhana2001`
+
 ## Getting Started
 
 To get started with this project, clone the repository to your local machine and install all the dependencies.
