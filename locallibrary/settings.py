@@ -31,7 +31,9 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*'
+]
 
 # Application definition
 
@@ -83,7 +85,7 @@ WSGI_APPLICATION = 'locallibrary.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': os.getenv("DB_HOST"),
+        'HOST': 'database',
         'USER': os.getenv("DB_USER"),
         'NAME': os.getenv("DATABASE"),
         'PASSWORD': os.getenv("DB_PASSWORD"),
